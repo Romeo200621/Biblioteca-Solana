@@ -1,34 +1,36 @@
 // No imports needed: web3, anchor, pg and more are globally available
 
-describe("Test", () => {
-  it("initialize", async () => {
-    // Generate keypair for the new account
-    const newAccountKp = new web3.Keypair();
+describe("Bar", () => {
+  it("crear bar", async () => {
 
-    // Send transaction
-    const data = new BN(42);
+    // Generar keypair para la cuenta del bar
+    const barKp = new web3.Keypair();
+
+    // Nombre del bar
+    const nombre = "Bar Solana";
+
+    // Enviar transacción para crear el bar
     const txHash = await pg.program.methods
-      .initialize(data)
+      .crearBar(nombre)
       .accounts({
-        newAccount: newAccountKp.publicKey,
-        signer: pg.wallet.publicKey,
+        bar: barKp.publicKey,
+        owner: pg.wallet.publicKey,
         systemProgram: web3.SystemProgram.programId,
       })
-      .signers([newAccountKp])
+      .signers([barKp])
       .rpc();
-    console.log(`Use 'solana confirm -v ${txHash}' to see the logs`);
 
-    // Confirm transaction
+    console.log(`Usa 'solana confirm -v ${txHash}' para ver los logs`);
+
+    // Confirmar transacción
     await pg.connection.confirmTransaction(txHash);
 
-    // Fetch the created account
-    const newAccount = await pg.program.account.newAccount.fetch(
-      newAccountKp.publicKey
-    );
+    // Obtener la cuenta creada
+    const bar = await pg.program.account.bar.fetch(barKp.publicKey);
 
-    console.log("On-chain data is:", newAccount.data.toString());
+    console.log("Datos del bar en blockchain:", bar);
 
-    // Check whether the data on-chain is equal to local 'data'
-    assert(data.eq(newAccount.data));
+    // Verificar que el nombre sea correcto
+    assert.equal(bar.nombre, nombre);
   });
 });
