@@ -1,60 +1,63 @@
-# Biblioteca en Solana
+Bar de Bebidas en Solana 
 
-![banner](./images/banner-biblioteca.jpg)
+CRUD básico de un Solana Program desarrollado con Rust y Anchor desde Solana Playground.
 
-CRUD básico de un Solana Program desarrollado con Rust y Anchor desde el Solana Playground. 
+Este proyecto permite gestionar un bar de bebidas en la blockchain, donde se pueden registrar bebidas, ver el menú, modificar su disponibilidad o eliminarlas.
 
-Puedes comenzar dándole Fork a este repositorio (abajo te explicamos como 👇), **hemos preparado un entorno de codespaces listo para que no tengas que instalar nada**, solo déjate llevar por la fluidez de los ejercicios y temas desarrollados especialmente para ti. 
+Puedes comenzar dándole Fork a este repositorio (abajo te explicamos cómo ).
+Hemos preparado un entorno de codespaces listo para que no tengas que instalar nada; solo sigue los ejercicios y ejemplos diseñados especialmente para aprender.
 
-Asegúrate de clonar este repositorio a tu cuenta usando el botón **`Fork`**.
+Asegúrate de clonar este repositorio a tu cuenta usando el botón Fork.
 
-![fork](./images/fork.png)
+Importando el proyecto
 
-## Importando el proyecto 
+Una vez que el repositorio esté en tu cuenta, lo siguiente que debes hacer es copiar el enlace de tu repositorio, lo cual puedes hacer directamente desde el navegador.
 
-Ya con el repositorio en tu cuenta lo siguiente que debes hacer copiar el `enlace de tu repositorio`, lo que se puede hacer directamente desdel navegador:
+Posteriormente, lo uniremos con el siguiente enlace en tu navegador:
 
-![repo](./images/repo.png)
-Posteriormente, lo uniremos con el siguiente enlace en nuestro navegador de preferencia:
-
-```url
 https://beta.solpg.io/
-```
 
-Lo que nos dará algo parecido a:
+Esto abrirá el entorno de Solana Playground con tu proyecto listo para trabajar.
 
-![url](./images/url.png)
+Al presionar Enter, serás enviado al entorno de Solana Playground con tu proyecto abierto.
 
-Al pulsar enter seremos enviados al `Solana Playground` con nuestro proyecto abierto:
+Para guardarlo, solo debes hacer clic en el botón Import y asignar un nombre a tu proyecto.
 
-![pg](./images/pg.png)
+Preparación del entorno
 
-Para guardarlo solo damos clic en el boton `import` y asignamos un nombre:
+Primero conectaremos el entorno con la Devnet de Solana, lo que también creará automáticamente una wallet para interactuar con el programa.
 
-![import](./images/import.png)
+Para hacerlo, haz clic en donde dice:
 
-## Preparacion del entorno
+Not Connected
 
-Primero conectaremos el entorno con la devnet, lo que tambien procederá a la creación de una wallet. Para eso daremos clic en donde dice **Not Conected**:
+Se abrirá una ventana donde debes presionar el botón Continue.
 
-![playground1](./images/playground1.png)
+Después de esto, el entorno mostrará la siguiente información:
 
-Saldrá la siguiente ventana donde daremos en el botón **Continue**:
+Estado de conexión
 
-![wallet](./images/wallet.png)
+ En verde:
+El estado de la conexión y la red a la que estás conectado (Devnet).
 
-Como resultado se mostrará la siguiente información:
+ En amarillo:
+La dirección de la wallet conectada.
 
-![status](./images/status.png)
+ En azul:
+La cantidad de tokens SOL disponibles en la wallet, los cuales podrás usar para probar las transacciones del bar.
 
-* En verde: el estado de la conexión y el entorno al que se encuentra conectado
+Funcionalidad del proyecto
 
-* En amarillo: la la dirección de la wallet conectada
+Este programa permite administrar un bar de bebidas en la blockchain mediante las siguientes operaciones:
 
-* En azul: la cantidad de tokens en la wallet
+Crear un Bar
 
-> ℹ️ ¿Quieres ver el ejemplo de un "Hola Mundo" en Solana?. Da clic aquí: 👉 [Ver Ejemplo](https://github.com/WayLearnLatam/Solana-starter-kit/tree/1fc6349ba63375a3fe223d8d56911bc64765459b/build-deploy)
+Agregar bebidas al menú
 
-> ℹ️ ¿Cuentas con una Wallet de [Phantom](https://phantom.com/) que deseas importar?, Da clic aquí para ver como hacerlo: 
+Ver las bebidas disponibles
 
-👉 [Como Importar una Wallet](https://github.com/WayLearnLatam/Solana-starter-kit/tree/1fc6349ba63375a3fe223d8d56911bc64765459b/import-key-a-playground)
+Eliminar bebidas
+
+Cambiar la disponibilidad de una bebida
+
+Todo esto queda registrado on-chain en Solana.
